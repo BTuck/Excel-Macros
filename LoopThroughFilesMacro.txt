@@ -1,0 +1,29 @@
+Sub LoopThroughFiles()
+    'Change the folder name to suite your file locations
+    FolderName = "C:\Users\martello\Desktop\New"
+    If Right(FolderName, 1) <> Application.PathSeparator Then FolderName = FolderName & Application.PathSeparator
+    Fname = Dir(FolderName)
+
+    'loop through the files
+    Do While Len(Fname)
+
+        With Workbooks.Open(FolderName & Fname)
+
+           ' here comes the code for the operations on every file the code finds
+            'Inserting a Column at Column A
+            Range("A1").EntireColumn.Insert
+            'Loops through all b Range and add the file if it's populated with and Arid(or any text)
+            For Each Cel In Range("b1:b200")
+            If Cel.Value <> "" Then Cel.Offset(0, -1).Value = ActiveWorkbook.Name
+            Next
+            'Save and close Functions, so save time & Clicking
+            ActiveWorkbook.Save
+            ActiveWorkbook.Close
+            Application.DisplayAlerts = False
+        End With
+
+        ' go to the next file in the folder
+        Fname = Dir
+    Loop
+    
+End Sub
