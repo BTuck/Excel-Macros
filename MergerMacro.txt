@@ -3,7 +3,7 @@ Dim bookList As Workbook
 Dim mergeObj As Object, dirObj As Object, filesObj As Object, everyObj As Object
 Application.ScreenUpdating = False
 Set mergeObj = CreateObject("Scripting.FileSystemObject")
-
+ 
 'change folder path of excel files here
 Set dirObj = mergeObj.Getfolder("C:\Users\martello\Desktop\New")
 Set filesObj = dirObj.Files
