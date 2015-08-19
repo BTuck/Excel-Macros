@@ -1,15 +1,24 @@
 Sub ReName()
-Dim score As String, result As String
-score = Range("B2").Value
+Dim orignal As String, result As String
 'Loops through all X Range'
-For Each Cel In Range("b1:b200")
-
-If score = "MITEL NuPoint" Then
-result = "Mitel NPM"
+For Each Cel In Range("b1:b23") 'ActiveCell.CurrentRegion.Cells"
+orignal = Cel.Value
+'Change NPM'
+If orignal = "Mitel NPM" Then
+result = "Mitel NuPoint"
+'Change MAS'
+ElseIf orignal = "MITEL MAS" Then
+result = "MAS"
+'Change MCD'
+ElseIf orignal = "MITEL MCD(3300)" Then
+result = "MiVoice Business"
+'Change MBG'
+ElseIf orignal = "MITEL MBG(6000)" Then
+result = "Mitel Border Gateway"
 Else
-    result = score
+    result = orignal
 End If
-Range("B2").Value = result
+Cel.Value = result
 Next
-
 End Sub
+
