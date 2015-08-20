@@ -1,24 +1,40 @@
 Sub ReName()
 Dim orignal As String, result As String
 'Loops through all X Range'
-For Each Cel In Range("b1:b23") 'ActiveCell.CurrentRegion.Cells"
+For Each Cel In Range("c1:c19") 'ActiveCell.CurrentRegion.Cells"
 orignal = Cel.Value
-'Change NPM'
-If orignal = "Mitel NPM" Then
-result = "Mitel NuPoint"
 'Change MAS'
-ElseIf orignal = "MITEL MAS" Then
-result = "MAS"
+If orignal = "MITEL_MAS" Then
+result = "Mitel MAS/Applications Suite"
+'Change UC'
+ElseIf orignal = "MITEL_UC" Then
+result = "Mitel Unified Communication Server/ MiCollab"
+'Change UVA'
+ElseIf orignal = "MITEL_UVA" Then
+result = "Mitel Virtual Kit"
 'Change MCD'
-ElseIf orignal = "MITEL MCD(3300)" Then
-result = "MiVoice Business"
+ElseIf orignal = "MITEL_3300" Then
+result = "MITEL MCD(3300)/MiVoice Business"
 'Change MBG'
-ElseIf orignal = "MITEL MBG(6000)" Then
-result = "Mitel Border Gateway"
+ElseIf orignal = "MITEL_6000" Then
+result = "MITEL MBG(6000)/Mitel Border Gateway"
+'Change MITEL 5000'
+ElseIf orignal = "MITEL_5000" Then
+result = "MITEL 5000/MiVoice Office 250"
+'Change MITEL BPI'
+ElseIf orignal = "MITEL_BPI" Then
+result = "MITEL BPI/Open Integration Gateway/MAS"
+'Change MITEL NPM'
+ElseIf orignal = "MITEL_NPM" Then
+result = "NuPoint Messenger/MAS"
+'Change MITEL CSM'
+ElseIf orignal = "MITEL_CSM" Then
+result = "Customer Service Manager/MiContact Center Office"
 Else
     result = orignal
 End If
 Cel.Value = result
 Next
 End Sub
+
 
