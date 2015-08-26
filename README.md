@@ -5,6 +5,8 @@ Collection of useful Macros for work
 
 :two: LoopThroughFiles- Inside a specific folder:open_file_folder: adds a column infront of every active row and inputs the file name.Great to be used in conjuction with the Merger :chart_with_upwards_trend:
 
+:three: BatchRenameCell- Useful for renamong the AMC feed device types to accurate/descriptive names, In theory could also be used to consolidate customers/partners names
+
 /play unix
 
 /play butts
