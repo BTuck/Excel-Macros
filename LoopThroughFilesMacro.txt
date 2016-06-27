@@ -13,9 +13,11 @@ Sub LoopThroughFiles()
             'Inserting a Column at Column A & B for File Date
             Range("A1").EntireColumn.Insert
             Range("B1").EntireColumn.Insert
-            'Insert 2 Columns at K
-            Range("L1").EntireColumn.Insert
-            Range("M1").EntireColumn.Insert
+            'new field
+            Range("G1").EntireColumn.Insert
+            'Insert 2 Columns at J
+            Range("N1").EntireColumn.Insert
+            Range("O1").EntireColumn.Insert
             'Loops through all b Range and add the file if it's populated with and Arid(or any text)
             For Each Cel In Range("c1:c200")
             If Cel.Value <> "" Then Cel.Offset(0, -2).Value = ActiveWorkbook.Name
